@@ -1,0 +1,15 @@
+
+{% extends "teams/base.html" %}
+{% block content %}
+  <h2>Мои фавориты</h2>
+  {% if favorites %}
+    <ul>
+      {% for team in favorites %}
+        <li>{{ team }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Вы еще не выбрали своих фаворитов. Перейдите в <a href="{% url 'settings' %}">настройки,</a> чтобы выбрать команду.</p>
+  {% endif %}
+  <p><strong>Language:</strong> {{ lang }} | <strong>Theme:</strong> {{ theme }}</p>
+{% endblock %}

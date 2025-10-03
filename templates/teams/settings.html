@@ -1,0 +1,23 @@
+
+{% extends "teams/base.html" %}
+{% block content %}
+  <h2>Настройки</h2>
+  <p>Выберите любимые команды, тему оформления и язык. Эти предпочтения сохраняются в cookies.</p>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Сохранить</button>
+  </form>
+
+  <section class="teams-preview">
+    <h3>Команды</h3>
+    <div class="team-list">
+      {% for key, name in teams %}
+        <div class="team-card">
+          <img src="/static/images/{{ key }}.svg" alt="{{ name }} logo" class="team-logo">
+          <div class="team-name">{{ name }}</div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}

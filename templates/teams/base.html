@@ -1,0 +1,26 @@
+
+<!doctype html>
+<html lang="{{ lang|default:'en' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>FanZone — для любителей спорта</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="theme-{{ theme|default:'light' }}">
+    <header class="site-header">
+        <h1>FanZone</h1>
+        <nav>
+            <a href="{% url 'settings' %}">Настройки</a> |
+            <a href="{% url 'favorites' %}">Мои команды</a> |
+            <a href="{% url 'clear_cookies' %}">Очистить Cookies</a>
+        </nav>
+    </header>
+    <main class="content">
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>FanZone — demo project for lab work</p>
+    </footer>
+</body>
+</html>
